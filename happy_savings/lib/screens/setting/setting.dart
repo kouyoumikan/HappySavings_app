@@ -16,6 +16,54 @@ class _ConfigState extends State<Config> {
         elevation: 0,
         backgroundColor: Colors.lightBlue, // アプリバーの背景色
       ),
+      body: ListView(
+        padding: EdgeInsets.all(36.0),
+        shrinkWrap: true,
+        children: ListTile.divideTiles(
+          context: context,
+          tiles: [
+            ListTile(
+              title: Text('テーマカラー'),
+              onTap: () {
+                Navigator.of(context).pushNamed("/theme");
+              },
+            ),
+            Divider(
+              // 区切り線
+              height: 40,
+              thickness: 3,
+              color: Colors.amber,
+              indent: 16,
+              endIndent: 16,
+            ),
+            ListTile(
+              title: Text('しあわせテーマイメージ図'),
+            ),
+            Divider(
+              // 区切り線
+              height: 40,
+              thickness: 3,
+              color: Colors.amber,
+              indent: 16,
+              endIndent: 16,
+            ),
+            ListTile(
+              title: Text('アプリの使い方'),
+            ),
+            Divider(
+              // 区切り線
+              height: 40,
+              thickness: 3,
+              color: Colors.amber,
+              indent: 16,
+              endIndent: 16,
+            ),
+            ListTile(
+              title: Text('お客様サポート'),
+            ),
+          ],
+        ).toList(),
+      ),
       // 下部ナビゲーションバーのスタイル指定
       bottomNavigationBar: new Theme(
         data: Theme.of(context).copyWith(
